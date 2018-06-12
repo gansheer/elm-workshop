@@ -1,7 +1,7 @@
 module Counter exposing (..)
 
 import Html exposing (Html, button, span, text, div)
-import Html.Events exposing (onClick)
+import Html.Events exposing (onClick, class)
 
 
 main =

@@ -1,13 +1,14 @@
 module Step03.ResultPage exposing (..)
 
-import Html exposing (Html, beginnerProgram, div, iframe, text)
-import Html.Attributes exposing (class, src, style)
+import Html exposing (Html, beginnerProgram, div, iframe, text, h1, a)
+import Html.Attributes exposing (class, src, style, href)
 
 
 resultPage : Int -> Html msg
 resultPage score =
-    div []
-        [ text "Content should go here"
+    div [class "score"]
+        [ h1 [] [ text ("Your score" ++ (toString score)) ]
+        , a [ class "btn btn-primary", href "#" ] [ text "Replay" ]
         ]
 
 

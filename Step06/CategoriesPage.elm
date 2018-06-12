@@ -9,12 +9,27 @@ type alias Category =
     , name : String
     }
 
-
 categoriesPage : Html msg
 categoriesPage =
     div []
-        [ text "Content of the page" ]
+        [ h1 [] [text "Play within a given category"] 
+         , ulCategories categories
+        ]
 
+ulCategories : List Category -> Html msg
+ulCategories categories =
+    ul [class "categories"] (liCategories categories)
+
+liCategories : List Category -> List (Html msg)
+liCategories categories = 
+    List.map liCategory categories
+
+liCategory : Category -> Html msg
+liCategory category =
+    li [] 
+        [
+            a [class "btn btn-primary", href ("#game/category/" ++ toString category.id)] [text category.name]
+        ]
 
 categories : List Category
 categories =

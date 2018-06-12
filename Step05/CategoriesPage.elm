@@ -2,6 +2,11 @@ module Step05.CategoriesPage exposing (..)
 
 import Html exposing (Html, text)
 
+type alias Category = {
+    id: Int,
+    name: String
+}
+
 
 categories : List Category
 categories =
